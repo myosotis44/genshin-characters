@@ -7,7 +7,7 @@ Un service web rest en back-end a été créé qui permet de gérer le CRUD des 
 
 
 * <b>Page d'accueil</b> : Affichage du nombre de personnages Genshin existant ainsi que  différentes rubriques : Ajout, Modification, Suppression. 
-* <b>Menu side-bar à gauche</b> : Liens menant vers la fiche personnage des personnages.
+* <b>Menu side-bar à gauche</b> : Liens menant vers la fiche  des personnages.
 * <b>Page du personnage</b> : Les données du personnages sont récupérées depuis le service web.
 * <b>Ajout, Modification, Suppression</b> : Formulaires  avec un système de validation afin de renvoyer des erreurs selon les champs. 
 
