@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnages de Genshin Impact</title>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://schnaps.it/archive/css/reset.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="website">
+        <header class="header" role="banner">
+            Personnages de Genshin Impact
+        </header>
+        <aside class="aside">
+            <nav class="navigation" role="navigation">
+
+                <!-- Icône pour retourner sur la page principale-->
+                <div id="home-icon">
+                    <span class="fa fa-home" style="font-size:2em"></span>
+                </div>
+                <ul id="characters-list" class="navigation-list">
+
+                </ul>
+            </nav>
+        </aside>
+
+        <main id="main" role="main" class="main">
+
+            <div id="displayNb"> Nombre de personnages existant: </div>
+
+            <div id="buttons">
+                <span class="col-md-4">
+                    <button id="addBtn" name="add" class="btn btn-info">Ajouter un personnage</button>
+                </span>
+
+                <span class="col-md-4">
+                    <button id="changeBtn" name="change" class="btn btn-warning">Modifier un personnage</button>
+                </span>
+
+                <span class="col-md-4">
+                    <button id="deleteBtn" name="delete" class="btn btn-danger">Supprimer un personnage</button>
+                </span>
+            </div>
+
+            <div id="blankView" class="blankView"> </div>
+
+            <div id="formView1">
+                <form id="formCharacters1" method="post" class="form-horizontal">
+                    <fieldset>
+                        <legend>Gestionnaire de personnages</legend>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="nom">Nom: </label>
+                            <div class="col-md-4">
+                                <input id="nom" name="nom" type="text" placeholder="Nom du personnage" minlength="2"
+                                    maxlength="30" class="form-control input-md">
+                            </div>
+                        </div>
+
+
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="sexe">Sexe: </label>
+                            <div class="col-md-4">
+                                <select id="sexe" name="sexe" class="form-control">
+                                    <option value="F">Féminin</option>
+                                    <option value="M">Masculin</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="nom">Elément: </label>
+                            <div class="col-md-4">
+                                <input id="element" name="element" type="text" placeholder="Nom de l'élément"
+                                    minlength="2" maxlength="30" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="arme">Arme: </label>
+                            <div class="col-md-4">
+                                <input id="arme" name="arme" type="text" placeholder="Nom de l'arme" minlength="2"
+                                    maxlength="30" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md4 control-label" for="description">Description: </label>
+                            <div class="col-md 4">
+                                <textarea id="description" name="description" rows="5" cols="43"
+                                    class="form-control input-md"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="nation">Nation: </label>
+                            <div class="col-md-4">
+                                <input id="nation" name="nation" type="text" placeholder="Nom de la nation"
+                                    minlength="2" maxlength="30" class="form-control input-md">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="rank">Niveau: </label>
+                            <div class="col-md-4">
+                                <input id="rank" name="rank" type="text" placeholder="Niveau" minlength="1"
+                                    maxlength="1" class="form-control input-md">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <button id="validate" name="validate" class="btn btn-primary">Valider le formulaire</button>
+                        </div>
+
+                        <span>
+                            <button class="btn btn-success" id="home1">
+                                Revenir à la page d'accueil
+                            </button>
+                        </span>
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <div id="deleteForm">
+
+                <select id="selectDeleteCharacters">
+
+                </select>
+                <input type="submit" value="ok" id="confirmSupress">
+
+            </div>
+
+            <div id="changeForm">
+                <select id="selectChangeCharacters">
+
+                </select>
+                <button id="confirmChange" name="confirmChange"> Ok!</button>
+
+                <div id="formView2">
+                    <form id="formCharacters2" method="put" class="form-horizontal2">
+                        <fieldset>
+                            <!-- Form Name -->
+                            <legend> Formulaire de modification des personnages</legend>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="nom">Nom: </label>
+                                <div class="col-md-4">
+                                    <input id="inputName" name="nom" type="text" placeholder="Nom du personnage"
+                                        minlength="2" maxlength="30" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="sexe">Sexe: </label>
+                                <div class="col-md-4">
+                                    <select id="inputSexe" name="sexe" class="form-control">
+                                        <option value="F">Féminin</option>
+                                        <option value="M">Masculin</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="nom">Elément: </label>
+                                <div class="col-md-4">
+                                    <input id="inputElement" name="element" type="text" placeholder="Nom de l'élément"
+                                        minlength="2" maxlength="30" class="form-control input-md" required="">
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="arme">Arme: </label>
+                                <div class="col-md-4">
+                                    <input id="inputArme" name="arme" type="text" placeholder="Nom de l'arme"
+                                        minlength="2" maxlength="30" class="form-control input-md" required="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md4 control-label" for="description">Description: </label>
+                                <div class="col-md 4">
+                                    <textarea id="inputDescription" name="description" rows="5" cols="43"
+                                        class="form-control input-md"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="nation">Nation: </label>
+                                <div class="col-md-4">
+                                    <input id="inputNation" name="nation" type="text" placeholder="Nom de la nation"
+                                        minlength="2" maxlength="30" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="rank">Niveau: </label>
+                                <div class="col-md-4">
+                                    <input id="inputRank" name="rank" type="text" placeholder="Niveau" minlength="1"
+                                        maxlength="1" class="form-control input-md">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <input type="submit" id="validateChange" name="validate" value="Valider la modification"
+                                    class="btn btn-primary">
+                            </div>
+
+                            <span>
+                                <button class="btn btn-success" id="home2">
+                                    Revenir à la page d'accueil
+                                </button>
+                            </span>
+                        </fieldset>
+                    </form>
+                </div>
+
+        </main>
+
+
+</body>
+
+</html>

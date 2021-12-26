@@ -1,0 +1,133 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 540px) {
+    .website {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+  }
+}
+
+.header {
+  grid-column: 1/ -1; 
+  text-align: center;
+  font-weight: 600;
+  font-size: 3.5rem;
+  text-shadow: -3px -3px 3px#e6f1ebd9 ;
+  background-image: url(paysagegenshin.jpg);
+}
+
+.navigation-list {
+  display: grid;
+  gap: .5rem;
+  text-align: center;
+  background-color:#8c8aff0e ;
+}
+
+aside {
+    background-color: #d9ade2d2;
+}
+li {
+    background-color: #2615c42c;
+    font-size: 14px;
+}
+
+#main {
+  background-color: #edccefb8;
+}
+a {
+    color: #7e60ec;
+    font-weight: 700;
+}
+
+a:hover {
+    color: floralwhite;
+    transition: 0.8s;
+    font-size: 16px;
+}
+
+ul {
+  background: #dfc6e1a6;
+}
+
+img {
+  width: 400px;
+  border-style: solid 15px;
+  border-radius: 10px;
+} 
+
+#picture {
+  display: flex; 
+  justify-content: center;
+  margin-top: 30px;
+}
+
+ul.listePersos>li {
+  padding: 2% 0 0 10%;
+}
+
+/* Pour décoller le dernier item de la liste du bord */
+ul.listePersos>li:last-of-type {
+  padding-bottom: 5%;
+}
+
+.navigation-link:hover,
+.navigation-link:focus
+{
+  background: rgba(0, 0, 0, 0);
+  color: floralwhite;
+}
+
+span.bold {
+  font-weight:bold;
+}
+
+#displayNb {
+  padding: 1em;
+}
+
+#buttons>* {
+  margin: 2em;
+  top: 80px;
+  left: 70px;
+  padding: 1em;
+  display: in-line;
+  justify-content: center;
+}
+
+#home2, #home1 {
+margin: 1em;
+color:floralwhite;
+}
+
+.fa-home {
+  color: #7e60ec;
+}
+
+#home-icon {
+  text-align: center;
+  cursor: pointer;
+}
+
+#home-icon:hover {
+  font-size: 2.2em;
+  transition: 0.9s;
+}
+
+#deleteForm {
+  margin-left: 470px ; margin-top: 90px
+}
+
+#changeForm {
+  margin-left: 280px ; margin-top: 90px
+}
+
+@media screen and (max-width: 828px) {
+  #deleteBtn { 
+    margin-top : 20px;
+  }
+  #deleteForm {
+    margin-left: 350px;
+  }
+}
